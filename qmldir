@@ -1,0 +1,3 @@
+module apps.Zonneboilerstats
+zonneboilerScreen 1.0 ZonneboilerstatsScreen.qml
+zonneboilerSettings  1.0 ZonneboilerstatsSettings.qml
