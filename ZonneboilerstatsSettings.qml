@@ -3,7 +3,7 @@ import qb.components 1.0
 import BasicUIControls 1.0
 
 Screen {
-	id: root
+	id:zonneboilerConfigScreen
 	screenTitle: qsTr("Zonneboiler Instellingen")
 	screenTitleIconUrl: "qrc:/tsc/zonneboiler.png"
 
@@ -103,8 +103,8 @@ Screen {
 		}
 		iconSource: "qrc:/tsc/edit.png"
 		onClicked: {
-			qnumKeyboard.open("Voer hier het ip-adres van de Zonneboiler in", ipadresLabel.inputText, saveIpadres);
-                        qnumKeyboard.state = "num_integer_clear_backspace";
+			qkeyboard.open("Voer hier het ip-adres van de Zonneboiler in", ipadresLabel.inputText, saveIpadres);
+                        //qnumKeyboard.state = "num_integer_clear_backspace";
 		}
 	}
 
@@ -133,9 +133,9 @@ Screen {
 		}
 		iconSource: "qrc:/tsc/edit.png"
 			onClicked: {
-			qnumKeyboard.open("Voer hier de refresh rate in", refreshrateLabel.inputText, saveRefreshRate);
-                        qnumKeyboard.maxTextLength = 2;
-                        qnumKeyboard.state = "num_integer_clear_backspace";
+			qkeyboard.open("Voer hier de refresh rate in", refreshrateLabel.inputText, saveRefreshRate);
+                        qkeyboard.maxTextLength = 2;
+                        //qnumKeyboard.state = "num_integer_clear_backspace";
 		}
 	}
 // end refresh rate	
