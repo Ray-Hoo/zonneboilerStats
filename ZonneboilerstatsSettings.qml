@@ -28,9 +28,9 @@ Screen {
 
 // Save IP Address
 	function saveIpadres(text) {
-		if (text) {
-			ipadresLabel.inputText = text;
-			app.ipadres = text;
+	if (( text.trim() == "" ) || (/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(text)) ) {
+			ipadresLabel.inputText = text.trim();
+			app.ipadres = text.trim();
      
 		}
 	}
@@ -38,8 +38,8 @@ Screen {
 // Save Refresh rate
 	function saveRefreshRate(text) {
 		if (text) {
-			refreshrateLabel.inputText = text;
-			app.refreshrate = text;
+			refreshrateLabel.inputText = text.trim();
+			app.refreshrate = text.trim();
 		}
 	}
 	
@@ -104,7 +104,6 @@ Screen {
 		iconSource: "qrc:/tsc/edit.png"
 		onClicked: {
 			qkeyboard.open("Voer hier het ip-adres van de Zonneboiler in", ipadresLabel.inputText, saveIpadres);
-                        //qnumKeyboard.state = "num_integer_clear_backspace";
 		}
 	}
 
@@ -135,7 +134,6 @@ Screen {
 			onClicked: {
 			qkeyboard.open("Voer hier de refresh rate in", refreshrateLabel.inputText, saveRefreshRate);
                         qkeyboard.maxTextLength = 2;
-                        //qnumKeyboard.state = "num_integer_clear_backspace";
 		}
 	}
 // end refresh rate	
